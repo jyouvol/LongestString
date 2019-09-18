@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.test.program.LongestWordFinderTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2019-09-18T00:53:38" hostname="Sanems-MacBook-Pro.local" time="0.002">
+  <properties/>
+  <testcase name="locateLongestWordFromReturnsNullOnNullInput" classname="org.test.program.LongestWordFinderTest" time="0.0"/>
+  <testcase name="locateLongestWordFromReturnsEmptyStringOnEmptyInputString" classname="org.test.program.LongestWordFinderTest" time="0.0"/>
+  <testcase name="locateLongestWordFromReturnsExpectedLongestWord" classname="org.test.program.LongestWordFinderTest" time="0.0"/>
+  <testcase name="locateLongestWordFromReturnsExpectedLastLongestWordWithMultipleWordsOfSameSize" classname="org.test.program.LongestWordFinderTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
