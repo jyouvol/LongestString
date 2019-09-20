@@ -3,7 +3,7 @@
 - Assumptions
 1. User of this application passes input string as commandLine argument.
 2. User passes at least one word as input.
-3. User expects exactly one word which is longest and its length as output.
+3. In case of multiple words with same size, unique words will be returned eliminating duplicates.
 
 # Execution steps
 This is a gradle project, so we will be using Gradle tasks to run our application and it's tests

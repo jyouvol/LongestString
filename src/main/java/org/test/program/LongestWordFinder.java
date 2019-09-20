@@ -1,61 +1,81 @@
 package org.test.program;
 
+import java.util.*;
+
 public class LongestWordFinder {
 
     public static void main(String[] args) {
         LongestWordFinder finder = new LongestWordFinder();
 
         String input = getInput(args);
-        String longestWord = finder.locateLongestWordFrom(input);
-        if (longestWord == null || longestWord.isEmpty()) {
+        Optional<Set<String>> mayLongestWords = finder.locateLongestWordFrom(input);
+        if (!mayLongestWords.isPresent()) {
             System.out.println("Invalid input");
         } else {
-            System.out.println(String.format("%d %s", longestWord.length(), longestWord));
+            Set<String> longestWords = mayLongestWords.get();
+            System.out.println(String.format("Number of words found: %d; Words: [ %s ]", longestWords.size(), String.join(", ", longestWords)));
         }
     }
 
 
     /**
-     * This method takes an input as string value to extract longest word
+     * This method takes an input as string value to extract longest word(s)
      * Assumption is string is not null and has at least one Character
-     * This method returns the last computed longest word
+     * This method returns all the computed longest word(s) eliminating the repeated words
      *
      * @param input
-     * @return last computed longest word
+     * @return computed words
      */
 
-    public String locateLongestWordFrom(String input) {
+    public Optional<Set<String>> locateLongestWordFrom(String input) {
 
-        if (null == input) {
-            return null;
-        }
-        if (input.isEmpty()) {
-            return input;
+        if (null == input || input.isEmpty()) {
+            return Optional.empty();
         }
 
-        String longestWord = "";
-        StringBuilder cache = new StringBuilder();
+        Set<String> longestWords = new HashSet<>();
+        List<Character> currentWordCache = new ArrayList<>();
+
+        String longestWord;
         int longestWordLength = 0;
         int currentWordLength = 0;
 
         for (Character c : input.toCharArray()) {
             if (!Character.isWhitespace(c)) {
-                cache.append(c);
+                currentWordCache.add(c);
                 currentWordLength++;
             } else {
-                if (currentWordLength > longestWordLength) {
-                    longestWordLength = currentWordLength;
-                    longestWord = cache.toString();
+                if (currentWordLength >= longestWordLength) {
+                    if (currentWordLength > longestWordLength) {
+                        longestWords.clear();
+                        longestWordLength = currentWordLength;
+                    }
+                    longestWord = this.charListToString(currentWordCache);
+                    longestWords.add(longestWord);
                 }
-                cache = new StringBuilder();
+                currentWordCache.clear();
                 currentWordLength = 0;
-
             }
         }
-        if (currentWordLength >= longestWordLength) {
-            longestWord = cache.toString();
+
+        if (!currentWordCache.isEmpty()) {
+            if (currentWordCache.size() >= longestWordLength) {
+                if (currentWordCache.size() > longestWordLength) {
+                    longestWords.clear();
+                }
+                longestWord = this.charListToString(currentWordCache);
+                longestWords.add(longestWord);
+            }
         }
-        return longestWord;
+        return Optional.of(longestWords);
+    }
+
+    private String charListToString(List<Character> cache) {
+        char[] chars = new char[cache.size()];
+        for (int index = 0; index < cache.size(); index++) {
+            chars[index] = cache.get(index);
+        }
+        return new String(chars);
     }
 
     private static String getInput(String[] args) {

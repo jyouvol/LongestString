@@ -83,9 +83,23 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.LongestString [build]">
+  <component name="RunManager" selected="Gradle.LongestString [clean]">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LongestWordFinder" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.test.program.LongestWordFinder" />
+      <module name="longest-string.main" />
+      <option name="PROGRAM_PARAMETERS" value="&quot;$%^@%%%%%!!!&amp;&amp;&amp;7464975 small&quot;" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.test.program.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -153,23 +167,44 @@
       <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="LongestString [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="LongestWordFinderTest.locateLongestWordFromReturnsExpectedWords" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="--tests &quot;org.test.program.LongestWordFinderTest.locateLongestWordFromReturnsExpectedWords&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="run" />
+            <option value=":cleanTest" />
+            <option value=":test" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="LongestWordFinderTest.locateLongestWordHandlesUnexpectedChars" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;org.test.program.LongestWordFinderTest.locateLongestWordHandlesUnexpectedChars&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -197,12 +232,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.LongestWordFinder" />
+      <item itemvalue="Gradle.LongestWordFinderTest.locateLongestWordFromReturnsExpectedWords" />
+      <item itemvalue="Gradle.LongestWordFinderTest.locateLongestWordHandlesUnexpectedChars" />
+      <item itemvalue="Gradle.LongestString [build]" />
+      <item itemvalue="Gradle.LongestString [jar]" />
+      <item itemvalue="Gradle.LongestString [clean]" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.LongestString [jar]" />
         <item itemvalue="Gradle.LongestString [clean]" />
+        <item itemvalue="Gradle.LongestWordFinderTest.locateLongestWordHandlesUnexpectedChars" />
+        <item itemvalue="Gradle.LongestWordFinderTest.locateLongestWordFromReturnsExpectedWords" />
+        <item itemvalue="Gradle.LongestString [jar]" />
         <item itemvalue="Gradle.LongestString [build]" />
-        <item itemvalue="Gradle.LongestString [run]" />
       </list>
     </recent_temporary>
   </component>
@@ -216,7 +260,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1568750527750</updated>
-      <workItem from="1568750533140" duration="2546000" />
+      <workItem from="1568750533140" duration="2961000" />
+      <workItem from="1568949346274" duration="5368000" />
     </task>
     <servers />
   </component>
